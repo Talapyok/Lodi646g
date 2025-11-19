@@ -93,6 +93,26 @@ html>
 </footer>
 
 </div>
+<p>Total Visitors: <span id="visits"></span></p>
+
+<script>
+fetch('https://api.countapi.xyz/hit/LodiG646/visits')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('visits').innerText = data.value;
+  });
+</script>
+
+    <p>Your Country: <span id="country"></span></p>
+
+<script>
+fetch('https://ipapi.co/json/')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('country').innerText = data.country_name;
+  });
+</script>
+
 
 </body>
 </html>
